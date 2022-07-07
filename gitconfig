@@ -1,0 +1,19 @@
+[color]
+	ui = true
+[user]
+	email = zischwartz@gmail.com
+	name = Zach Schwartz
+[core]
+	excludesfile = ~/.git-ignore-global
+[alias]
+  ac = !git add -A && git commit
+	pom = push origin master
+	plo = pull origin
+	f = pull origin --ff-only
+	p = pull origin --no-rebase # default, creates merge 
+	r = pull origin --rebase
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+[push]
+	default = current
+[github]
+	user = zischwartz
