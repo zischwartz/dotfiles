@@ -15,5 +15,6 @@
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
 	default = current
+	autoSetupRemote = true
 [github]
 	user = zischwartz
