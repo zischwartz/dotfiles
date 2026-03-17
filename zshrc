@@ -56,3 +56,14 @@ SAVEHIST=$HISTSIZE
 
 setopt SHARE_HISTORY HIST_IGNORE_DUPS
 
+alias lb="git lb"
+# re-add files already added- useful with precommit
+alias ra="git diff --name-only --cached | xargs git add"
+# npm install --global trash-cli
+alias rm=trash 
+# bun completions
+[ -s "/Users/zach/.bun/_bun" ] && source "/Users/zach/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
