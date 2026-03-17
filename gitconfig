@@ -6,13 +6,14 @@
 [core]
 	excludesfile = ~/.git-ignore-global
 [alias]
-  ac = !git add -A && git commit
+  	ac = !git add -A && git commit
 	pom = push origin master
 	plo = pull origin
 	f = pull origin --ff-only
 	p = pull origin --no-rebase # default, creates merge 
 	r = pull origin --rebase
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	d = !git checkout development
 [push]
 	default = current
 	autoSetupRemote = true
@@ -21,3 +22,8 @@
 
 [alias]
     lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+    lb2 = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 20 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+    lb10 = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 100 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+[pull]
+	default = current
+	autoSetupRemote = true
