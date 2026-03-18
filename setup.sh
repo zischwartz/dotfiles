@@ -36,6 +36,10 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# finally do one for bashrc
+echo "Creating a link for bashrc to zshrc for codespaces"
+ln -s $dir/zshrc ~/.bashrc
+
 # echo "installing pathogen (for vim)"
 # mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 # curl -Sso ~/.vim/autoload/pathogen.vim \
