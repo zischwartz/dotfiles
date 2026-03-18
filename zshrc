@@ -1,7 +1,10 @@
 # https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally#manually-change-npms-default-directory
 export PATH=~/.npm-global/bin:$PATH
 
-defaults write com.apple.finder AppleShowAllFiles -boolean true;
+if [[ "$OSTYPE" == darwin* ]]; then
+  # echo "You are on a Mac"
+  defaults write com.apple.finder AppleShowAllFiles -boolean true;
+fi
 
 bindkey "^R" history-incremental-search-backward
 # up and down arrows to search 
